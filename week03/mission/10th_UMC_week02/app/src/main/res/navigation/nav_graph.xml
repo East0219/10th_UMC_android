@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.a10th_umc_week02.HomeFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_buyFragment"
+            app:destination="@id/buyFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_wishlistFragment"
+            app:destination="@id/wishlistFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/buyFragment"
+        android:name="com.example.a10th_umc_week02.BuyFragment"
+        android:label="구매하기"
+        tools:layout="@layout/fragment_buy" />
+
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.example.a10th_umc_week02.WishlistFragment"
+        android:label="위시리스트"
+        tools:layout="@layout/fragment_wishlist" />
+        <action
+            android:id="@+id/action_wishtlistFragment_to_buyFragment"
+            app:destination="@id/buyFragment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.a10th_umc_week02.ProfileFragment"
+        android:label="프로필"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.example.a10th_umc_week02.BasketFragment"
+        android:label="장바구니"
+        tools:layout="@layout/fragment_basket">
+
+        <!-- basket -> buy로 이동하는 action 추가 -->
+        <action
+            android:id="@+id/action_basketFragment_to_buyFragment"
+            app:destination="@id/buyFragment" />
+    </fragment>
+
+</navigation>
