@@ -21,13 +21,29 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.a10th_umc_week07.data.model.HomeData
 
 @Composable
-fun HomeScreen(onProductClick: (HomeData) -> Unit) {
+fun HomeScreen() {
     val products = remember {
         listOf(
-            HomeData("Air Jordan XXXVI",   "US$185", R.drawable.ic_blackshoes),
-            HomeData("Nike Air Force 1 '07", "US$115", R.drawable.ic_whiteshoes)
+            HomeData(
+                id = 1,
+                name = "Air Jordan XXXVI",
+                category = "Basketball Shoes",
+                colours = 3,
+                price = "US\$185",
+                image = R.drawable.ic_blackshoes
+            ),
+            HomeData(
+                id = 2,
+                name = "Nike Air Force 1 '07",
+                category = "Women's Shoes",
+                colours = 5,
+                price = "US\$115",
+                image = R.drawable.ic_whiteshoes,
+                isBestSeller = true
+            )
         )
     }
 
@@ -47,7 +63,6 @@ fun HomeScreen(onProductClick: (HomeData) -> Unit) {
             fontSize = 16.sp,
             modifier = Modifier.padding(start = 41.dp, top = 4.dp)
         )
-
         Image(
             painter = painterResource(id = R.mipmap.ic_nikehome),
             contentDescription = "Nike Home",
@@ -56,7 +71,6 @@ fun HomeScreen(onProductClick: (HomeData) -> Unit) {
                 .align(Alignment.CenterHorizontally)
                 .padding(top = 16.dp)
         )
-
         Text(
             text = "What's new?",
             fontWeight = FontWeight.Bold,
@@ -75,11 +89,14 @@ fun HomeScreen(onProductClick: (HomeData) -> Unit) {
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
             modifier = Modifier.fillMaxWidth()
         ) {
-            items(products) { product ->
+            items(
+                items = products,
+                key = { product -> product.id }
+            ) { product ->
                 ProductCard(
                     product = product,
                     imageSize = 200.dp,
-                    onClick = { onProductClick(product) }
+                    onClick = {}
                 )
             }
         }

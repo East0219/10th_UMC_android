@@ -19,12 +19,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun BasketScreen(onBuyClick: () -> Unit) {
+fun BasketScreen(onOrderClick: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier.align(Alignment.Center),
@@ -46,18 +47,19 @@ fun BasketScreen(onBuyClick: () -> Unit) {
         }
 
         Button(
-            onClick = onBuyClick,
+            onClick = onOrderClick,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .padding(horizontal = 24.dp, vertical = 100.dp)
-                .height(70.dp),
+                .padding(horizontal = 24.dp, vertical = 32.dp)
+                .height(54.dp),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
         ) {
             Text(
-                text = "구매하기",
+                text = "주문하기",
                 fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
                 color = Color.White
             )
         }

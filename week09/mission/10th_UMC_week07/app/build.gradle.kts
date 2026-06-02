@@ -60,6 +60,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50")
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("io.coil-kt.coil3:coil-compose:3.0.0-alpha06")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.0-alpha06")
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.material.icons.extended)
 }
